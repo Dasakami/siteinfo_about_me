@@ -90,11 +90,14 @@ CLOUDINARY_STORAGE = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dandasakami',  # Имя базы данных (Render)
+        'USER': 'dasakami',  # Имя пользователя (Render)
+        'PASSWORD': '5DPGL3hw6BgENh9LgTul6omf8ud3t34x',  # Пароль (Render)
+        'HOST': 'dpg-d0d09s1r0fns73cbf79g-a',  # Хост (Render)
+        'PORT': '5432',  # Порт (Render)
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
