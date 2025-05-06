@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dan Dasakami - Home{% endblock %}
+
+{% block content %}
+<!-- 1. Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Привет, я<span class="accent-text"> Dan Dasakami</span></h1>
+            <p class="hero-subtitle">Разработчик, мыслитель и создатель цифровых решений</p>
+            <div class="hero-cta">
+                <a href="{% url 'projects' %}" class="btn btn-primary">Мои проекты</a>
+                <a href="{% url 'contacts' %}" class="btn btn-outline">Связаться со мной</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. About Me Preview -->
+<section class="about-preview">
+  <div class="container">
+      <div class="about-preview-content">
+          <div class="about-preview-text">
+              <h2 class="section-title">Кто я такой?</h2>
+              <p>Я — Dan Dasakami. Разработчик, который с 15 лет создаёт проекты, меняющие мышление.  
+              Я пишу код не ради кода, а чтобы сделать полезные, умные решения для людей.</p>
+              <a href="/about" class="btn-text">Узнать больше обо мне <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="about-preview-image">
+              <img src="{% static 'vendor/img/dan_dasakami.png' %}" alt="Dan Dasakami" class="preview-image">
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- 3. Projects Preview -->
+<section class="projects-preview">
+  <div class="container">
+      <h2 class="section-title centered">Избранные проекты</h2>
+      <div class="projects-grid">
+          <!-- Проект 1 -->
+          <div class="project-card">
+              <div class="project-image">
+                  <img src="{% static 'vendor/img/edu_project.jpg' %}" alt="Dasakami.edu.kg">
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Dasakami.edu.kg</h3>
+                  <p class="project-description">Образовательная платформа с курсами по языкам, полезными книгами и аудиоматериалами. Всё, что нужно для саморазвития.</p>
+                  <a href="https://dasakami.edu.kg" class="btn-text" target="_blank">Посмотреть проект <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+
+          <!-- Проект 2 -->
+          <div class="project-card">
+              <div class="project-image">
+                  <img src="{% static 'vendor/img/insta_bot.jpg' %}" alt="Dasakami Download">
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Dasakami Download</h3>
+                  <p class="project-description">Telegram-бот для скачивания видео и рилс из Instagram. Простой, быстрый и надёжный инструмент прямо в мессенджере.</p>
+                  <a href="#" class="btn-text">Подробнее <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+
+          <!-- Проект 3 -->
+          <div class="project-card">
+              <div class="project-image">
+                  <img src="{% static 'vendor/img/vacancy_project.jpg' %}" alt="Dasakami Vacancy">
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Dasakami Vacancy</h3>
+                  <p class="project-description">Сайт по поиску работы в Кыргызстане. Удобная навигация, быстрый поиск, актуальные вакансии — всё в одном месте.</p>
+                  <a href="#" class="btn-text">Подробнее <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+
+          <!-- Проект 4 -->
+          <div class="project-card">
+              <div class="project-image">
+                  <img src="{% static 'vendor/img/simulation.jpg' %}" alt="Dasakami Simulation">
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Dasakami Simulation</h3>
+                  <p class="project-description">Симулятор реальной жизни, который помогает развивать дисциплину. Проект находится в активной разработке.</p>
+                  <a href="#" class="btn-text">Подробнее <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+
+          <!-- Проект 5 -->
+          <div class="project-card">
+              <div class="project-image">
+                  <img src="{% static 'vendor/img/avtoestet.jpg' %}" alt="Avtoestet.org.kg">
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Avtoestet.org.kg</h3>
+                  <p class="project-description">Коммерческий сайт для центра автоэстетики. Заказной проект с адаптивным дизайном и панелью управления.</p>
+                  <a href="https://www.avtoestet.org.kg/" class="btn-text">Подробнее <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+      </div>
+
+      <div class="section-cta">
+          <a href="/projects" class="btn btn-outline">Смотреть все проекты</a>
+      </div>
+  </div>
+</section>
+
+
+<!-- 4. Skills Section -->
+<section class="skills-section">
+  <div class="container">
+      <h2 class="section-title centered">Что я умею</h2>
+      <div class="skills-grid">
+          <div class="skill-card">
+              <div class="skill-icon">
+                  <i class="fas fa-code"></i>
+              </div>
+              <h3 class="skill-title">Веб-разработка</h3>
+              <p>Создаю адаптивные сайты с нуля на HTML, CSS, Django и других технологиях. Чистый код и современный подход.</p>
+          </div>
+          <div class="skill-card">
+              <div class="skill-icon">
+                  <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3 class="skill-title">Мобильные приложения</h3>
+              <p>Разрабатываю кроссплатформенные приложения на Flutter. Быстро, удобно и с красивым дизайном.</p>
+          </div>
+          <div class="skill-card">
+              <div class="skill-icon">
+                  <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3 class="skill-title">UI/UX-дизайн</h3>
+              <p>Проектирую интуитивно понятные интерфейсы, которые приятно использовать. Упор на простоту и эстетику.</p>
+          </div>
+          <div class="skill-card">
+              <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+              </div>
+              <h3 class="skill-title">Backend и базы данных</h3>
+              <p>Работаю с SQL, NoSQL, Docker. Делаю надёжные серверные решения и интеграции с API.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- 5. Quote Section -->
+<section class="quote-section">
+  <div class="container">
+      <div class="quote-content">
+          <blockquote>
+              <p>«Дисциплина — это мост между целями и результатами. Код — мой инструмент, но порядок — мой двигатель.»</p>
+              <cite>— Dan Dasakami</cite>
+          </blockquote>
+      </div>
+  </div>
+</section>
+
+
+<!-- 6. Articles Preview -->
+<section class="articles-preview">
+    <div class="container">
+        <h2 class="section-title centered">Latest Articles</h2>
+        <div class="articles-grid">
+            {% for article in latest %}
+            <div class="article-card">
+                <div class="article-image">
+                    <img src="{{ article.cover.url }}" alt="{{ article.title }}">
+                </div>
+                <div class="article-content">
+                    <h3 class="article-title">{{ article.title }}</h3>
+                    <p class="article-excerpt">{{ article.content|truncatechars:50|safe }}</p>
+                    <a href="{% url 'article_detail' article.slug %}" class="btn-text">Поподробнее<i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="section-cta">
+            <a href="{% url 'articles' %}" class="btn btn-outline">View All Articles</a>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+      <div class="newsletter-content">
+          <h2 class="section-title">Будь на связи</h2>
+          <p>Подпишись на рассылку — получай новые статьи, проекты и полезные материалы первым.</p>
+          <form class="newsletter-form" action="" method="post">
+              <div class="form-group">
+                  <input type="email" name="email" id="email" placeholder="Твой email" required>
+                  <button type="submit" class="btn btn-primary">Подписаться</button>
+              </div>
+              <p class="form-note">Без спама. Только важное и интересное.</p>
+          </form>
+      </div>
+  </div>
+</section>
+
+{% endblock %}

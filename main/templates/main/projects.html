@@ -1,0 +1,359 @@
+{% extends "base.html" %}
+{% load static  %}
+{% block title %}Dan Dasakami - Projects{% endblock %}
+
+{% block content %}
+<!-- 1. Заголовок и фильтр проектов -->
+<section class="projects-header">
+    <div class="container">
+        <h1 class="page-title">Мои проекты</h1>
+        <p class="page-subtitle">Изучите мои последние работы и креативные решения.</p>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="in-progress">В процессе</button>
+            <button class="filter-btn" data-filter="completed">Завершенные</button>
+            <button class="filter-btn" data-filter="web">Веб</button>
+            <button class="filter-btn" data-filter="mobile">Мобильные</button>
+        </div>
+    </div>
+</section>
+
+<!-- 2. Сетка проектов -->
+<section class="projects-grid-section">
+    <div class="container">
+        <div class="projects-grid">
+            <!-- Пример карточки проекта 1 -->
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="{% static 'vendor/img/edu_project.jpg' %}" alt="Dasakami Website">
+                    <span class="project-status">В процессе</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Dasakami Academy</h3>
+                    <div class="project-tags">
+                        <span class="tag">Веб</span>
+                        <span class="tag">Образование</span>
+                    </div>
+                    <p class="project-description">Образовательная платформа с языковыми ресурсами, книгами и интерактивными аудиоуроками.</p>
+                    <div class="project-links">
+                        <a href="https://dasakami.edu.kg" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Онлайн демонстрация</a>
+                        <a href="https://github.com/dasakami" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пример карточки проекта 2 -->
+            <div class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="{% static 'vendor/img/insta_bot.jpg' %}" alt="Dasakami Download Bot">
+                    <span class="project-status">Завершено</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Dasakami Download Bot</h3>
+                    <div class="project-tags">
+                        <span class="tag">Мобильные</span>
+                        <span class="tag">Боты</span>
+                    </div>
+                    <p class="project-description">Телеграм-бот для скачивания видео с Instagram напрямую через платформу.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Онлайн демонстрация</a>
+                        <a href="https://github.com/dandasakami" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Можно добавить еще карточки проектов -->
+
+        </div>
+    </div>
+</section>
+
+<!-- 3. Featured Project -->
+<section class="featured-project">
+    <div class="container">
+        <h2 class="section-title">Избранный Проект</h2>
+        <div class="featured-project-content">
+            <div class="featured-project-image">
+                <img src="{% static 'vendor/img/edu_project.jpg' %}" alt="Dasakami Website">
+            </div>
+            <div class="featured-project-details">
+                <h3 class="featured-project-title">Сайт Dasakami</h3>
+                <div class="project-tags">
+                    <span class="tag">Веб</span>
+                    <span class="tag">Образовательная Платформа</span>
+                </div>
+                <p class="featured-project-description">
+                    Этот проект — образовательная платформа, которая помогает учить языки и предоставляет онлайн-ресурсы, книги и аудиоуроки. Полный проект закрыт, но здесь я описываю его ключевые особенности и функциональность.
+                </p>
+                <div class="featured-project-challenges">
+                    <h4>Задачи и решения</h4>
+                    <p>
+                        Основной задачей было создание интерактивного пользовательского интерфейса, при этом нужно было обеспечить поддержку разных типов медиа-контента, таких как книги, аудио и видео. Я использовал модульную архитектуру, чтобы сделать проект масштабируемым и гибким.
+                    </p>
+                </div>
+                <div class="featured-project-tech">
+                    <h4>Использованные технологии</h4>
+                    <ul class="tech-list">
+                        <li class="tech-item">Django (Backend)</li>
+                        <li class="tech-item">Flutter (Мобильный интерфейс)</li>
+                        <li class="tech-item">PostgreSQL</li>
+                        <li class="tech-item">Docker (Развертывание)</li>
+                        <li class="tech-item">GitHub (Контроль версий)</li>
+                    </ul>
+                </div>
+                <div class="featured-project-links">
+                    <a href="https://github.com/Dasakami/dasakami-academy/blob/main/README.md" class="btn btn-outline" target="_blank">Посмотреть исходный код на GitHub</a>
+                    <a href="https://dasakami.edu.kg/" class="btn btn-primary" target="_blank">Посмотреть рабочую демо-версию</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 4. Секция отзывов -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title centered">Что говорят клиенты</h2>
+        <div class="testimonials-slider">
+            <!-- Первый отзыв -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Сотрудничество с Дэном было отличным. Он быстро понял задачу и реализовал её даже лучше, чем я ожидал.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="{% static 'vendor/img/client1.jpg' %}" alt="Айбек Асанов">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name">Айбек Асанов</h4>
+                            <p class="testimonial-author-position">Заказчик проекта Avtoestet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Второй отзыв -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Проект был выполнен качественно и в срок. Рекомендую Дана как надёжного разработчика!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="{% static 'vendor/img/client2.jpg' %}" alt="Жыргал Беков">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name">Жыргал Беков</h4>
+                            <p class="testimonial-author-position">Инициатор стартапа Dasakami Chat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Можно добавить больше отзывов по аналогии -->
+        </div>
+    </div>
+</section>
+<!-- 5. Статистика Проектов -->
+<section class="project-stats-section">
+    <div class="container">
+        <h2 class="section-title centered">Статистика Проектов</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                <span class="stat-number">12</span>
+                <span class="stat-label">Всего проектов</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <span class="stat-number">3,200+</span>
+                <span class="stat-label">Активные пользователи</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <span class="stat-number">1,050+</span>
+                <span class="stat-label">Звёзды на GitHub</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-download"></i></div>
+                <span class="stat-number">8,000+</span>
+                <span class="stat-label">Скачиваний</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 6. Рабочий Процесс -->
+<section class="work-process-section">
+    <div class="container">
+        <h2 class="section-title centered">Как Я Работаю</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-number">1</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Анализ</h3>
+                    <p>Изучаю задачи, цели проекта и ограничения через обсуждения и исследование.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-number">2</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Планирование</h3>
+                    <p>Создаю чёткий план с выбором технологий, сроками и этапами реализации.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-number">3</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Дизайн</h3>
+                    <p>Разрабатываю интерфейс, понятный и удобный для пользователей.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-number">4</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Разработка</h3>
+                    <p>Пишу чистый, эффективный код с упором на производительность и масштабируемость.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-number">5</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Тестирование</h3>
+                    <p>Проверяю работоспособность, безопасность и совместимость на разных устройствах.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-number">6</div>
+                <div class="process-step-content">
+                    <h3 class="process-step-title">Запуск</h3>
+                    <p>Публикую проект, сопровождая его на начальных этапах, чтобы всё прошло гладко.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 7. Призыв к Сотрудничеству -->
+<section class="collaboration-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">Есть идея проекта?</h2>
+            <p class="cta-text">Я всегда открыт для новых предложений, интересных задач и совместной разработки. Давайте создадим что-то действительно крутое!</p>
+            <div class="cta-buttons">
+                <a href="/contacts" class="btn btn-primary">Связаться со мной</a>
+                <a href="#" class="btn btn-outline" data-toggle="modal" data-target="#projectBrief">Отправить бриф проекта</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Project Brief Modal (Hidden by default) -->
+<div class="modal" id="projectBrief">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Project Brief</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="project-brief-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project_title">Project Title</label>
+                        <input type="text" id="project_title" name="project_title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project_type">Project Type</label>
+                        <select id="project_type" name="project_type" required>
+                            <option value="">Select a type</option>
+                            <option value="website">Website</option>
+                            <option value="mobile_app">Mobile App</option>
+                            <option value="web_app">Web Application</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project_description">Project Description</label>
+                        <textarea id="project_description" name="project_description" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Expected Timeline</label>
+                        <input type="text" id="timeline" name="timeline">
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select a range</option>
+                            <option value="$1K-$5K">$1,000 - $5,000</option>
+                            <option value="$5K-$10K">$5,000 - $10,000</option>
+                            <option value="$10K-$20K">$10,000 - $20,000</option>
+                            <option value="$20K+">$20,000+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Brief</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Filter projects
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project Brief Modal
+        const modal = document.getElementById('projectBrief');
+        const modalToggle = document.querySelector('[data-toggle="modal"]');
+        const modalClose = document.querySelector('.modal-close');
+        
+        if (modalToggle && modal) {
+            modalToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('show');
+            });
+            
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('show');
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact Dan Dasakami{% endblock %}
+
+{% block content %}
+<!-- 1. Contact Form Section -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="contact-form-content">
+            <div class="contact-info">
+                <h1 class="page-title">Связаться со мной</h1>
+                <p class="contact-subtitle">Есть идея, проект или просто хочешь поздороваться? Напиши мне — я отвечу как можно скорее.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:dendasakami@gmail.com">dendasakami@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h3>Локация</h3>
+                            <p>Bishkek, Kyrgyzstan</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fab fa-telegram"></i></div>
+                        <div class="contact-details">
+                            <h3>Telegram</h3>
+                            <p><a href="https://t.me/dandasakami">@dandasakami</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/dasakami" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/dandasakami" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://linkedin.com/in/dandasakami" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/dskenglish.dsk/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form action="{% url 'contacts' %}" method="POST" class="contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Тема</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+                {% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 2. Map Section -->
+<section class="map-section">
+    <div class="container">
+        <h2 class="section-title centered">Find Me Here</h2>
+        <div class="map-container">
+            <!-- Placeholder for map integration -->
+            <div class="map-placeholder">
+                <div class="map-overlay">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Map loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Direct Contact Section -->
+<section class="direct-contact-section">
+    <div class="container">
+        <h2 class="section-title centered">Прямые Контакты</h2>
+        <div class="direct-contacts-grid">
+            <div class="direct-contact-card">
+                <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                <h3 class="contact-card-title">Электронная почта</h3>
+                <p class="contact-card-value"><a href="mailto:dendasakami@gmail.com">dendasakami@gmail.com</a></p>
+                <p class="contact-card-note">Для вопросов по проектам и сотрудничеству</p>
+            </div>
+            <div class="direct-contact-card">
+                <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+                <h3 class="contact-card-title">GitHub</h3>
+                <p class="contact-card-value"><a href="https://github.com/dandasakami" target="_blank">@dandasakami</a></p>
+                <p class="contact-card-note">Посмотрите мои проекты с открытым исходным кодом</p>
+            </div>
+            <div class="direct-contact-card">
+                <div class="contact-card-icon"><i class="fab fa-linkedin"></i></div>
+                <h3 class="contact-card-title">LinkedIn</h3>
+                <p class="contact-card-value"><a href="https://linkedin.com/in/dandasakami" target="_blank">Dan Dasakami</a></p>
+                <p class="contact-card-note">Давайте свяжемся профессионально</p>
+            </div>
+            <div class="direct-contact-card">
+                <div class="contact-card-icon"><i class="fab fa-twitter"></i></div>
+                <h3 class="contact-card-title">Twitter</h3>
+                <p class="contact-card-value"><a href="https://twitter.com/dandasakami" target="_blank">@dandasakami</a></p>
+                <p class="contact-card-note">Следите за обновлениями и мыслями</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Open For Section -->
+<section class="open-for-section">
+    <div class="container">
+        <h2 class="section-title centered">Я открыт для...</h2>
+        <div class="open-for-grid">
+            <div class="open-for-card">
+                <div class="open-for-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="open-for-title">Фриланс проекты</h3>
+                <p>Доступен для индивидуальной разработки и краткосрочных контрактов. Давайте воплотим вашу идею в реальность!</p>
+            </div>
+            <div class="open-for-card">
+                <div class="open-for-icon"><i class="fas fa-handshake"></i></div>
+                <h3 class="open-for-title">Сотрудничество</h3>
+                <p>Интересуюсь партнерством с другими разработчиками, дизайнерами и креаторами над инновационными проектами.</p>
+            </div>
+            <div class="open-for-card">
+                <div class="open-for-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3 class="open-for-title">Менторство</h3>
+                <p>Предлагаю наставничество для начинающих разработчиков, которые хотят улучшить свои навыки и продвинуться в карьере.</p>
+            </div>
+            <div class="open-for-card">
+                <div class="open-for-icon"><i class="fas fa-comments"></i></div>
+                <h3 class="open-for-title">Выступления</h3>
+                <p>Доступен для техдискуссий, мастер-классов и панельных обсуждений по темам разработки и дизайна.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. FAQ Section -->
+<section class="contact-faq-section">
+    <div class="container">
+        <h2 class="section-title centered">Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3 class="faq-question">Какое ваше типичное время ответа?</h3>
+                <div class="faq-answer">
+                    <p>Я обычно отвечаю на все запросы в течение 24-48 часов в рабочие дни. Для срочных вопросов, пожалуйста, указывайте это в теме письма.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Вы работаете с клиентами по всему миру?</h3>
+                <div class="faq-answer">
+                    <p>Да, я работаю с клиентами со всего мира. Мне комфортно работать удаленно и адаптироваться к различным часовых поясам.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Что мне нужно предоставить для запроса по проекту?</h3>
+                <div class="faq-answer">
+                    <p>Для начала, пожалуйста, укажите объем проекта, сроки, ориентировочный бюджет и любые специфические требования. Чем больше деталей, тем легче мне оценить, подходим ли мы друг другу.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Вы предоставляете поддержку после завершения проекта?</h3>
+                <div class="faq-answer">
+                    <p>Да, я предлагаю пакеты поддержки для всех завершенных проектов. Мы можем обсудить конкретные потребности в поддержке и договориться о подходящем плане.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 6. Testimonials Section -->
+<section class="contact-testimonials-section">
+    <div class="container">
+        <h2 class="section-title centered">Отзывы клиентов</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Работа с этим разработчиком была просто отличной! Он понимает требования клиента и всегда идет на встречу. Результат превзошел все ожидания.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="{% static 'vendor/img/client1.jpg' %}" alt="Иван Иванов">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name">Иван Иванов</h4>
+                            <p class="testimonial-author-position">Руководитель проекта, Компания ABC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Очень благодарен за профессионализм и качественную работу. Все задачи были выполнены в срок, и результат оказался на высшем уровне!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="{% static 'vendor/img/client1.jpg' %}" alt="Мария Петрова">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name">Мария Петрова</h4>
+                            <p class="testimonial-author-position">Директор по разработке, Компания XYZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Closing Message -->
+<section class="closing-message-section">
+    <div class="container">
+        <div class="closing-message-content">
+            <h2 class="closing-title">Давайте создадим что-то потрясающее вместе</h2>
+            <p class="closing-text">Если у вас есть идея для проекта или вы просто хотите пообщаться, я всегда готов помочь. Жду с нетерпением вашего сообщения и возможности поработать вместе, чтобы воплотить ваши идеи в жизнь.</p>
+            <div class="closing-social">
+                <p>Следите за мной в социальных сетях:</p>
+                <div class="social-links">
+                    <a href="https://github.com/dandasakami" class="social-link" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/dandasakami" class="social-link" aria-label="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://linkedin.com/in/dandasakami" class="social-link" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/dskenglish.dsk/" class="social-link" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.maxHeight;
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.maxHeight = null;
+                });
+                
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't already open
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Form validation
+        const contactForm = document.querySelector('.contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                let valid = true;
+                const inputs = contactForm.querySelectorAll('input, textarea');
+                
+                inputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        valid = false;
+                        input.classList.add('error');
+                    } else {
+                        input.classList.remove('error');
+                    }
+                    
+                    if (input.type === 'email' && input.value.trim()) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value.trim())) {
+                            valid = false;
+                            input.classList.add('error');
+                        }
+                    }
+                });
+                
+                if (!valid) {
+                    e.preventDefault();
+                    alert('Пожалуйста, заполните все обязательные поля корректно.');
+                }
+            });
+        }
+    });
+</script>
+
+{% endblock %}

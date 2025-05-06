@@ -1,0 +1,323 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Dan Dasakami{% endblock %}
+
+{% block content %}
+<!-- 1. Biography Section -->
+<section class="bio-section">
+    <div class="container">
+        <div class="bio-content">
+            <div class="bio-text">
+                <h1 class="page-title">Обо мне</h1>
+                <p class="bio-intro">Привет! Я Dan Dasakami — молодой разработчик и цифровой создатель из Кыргызстана.</p>
+                <p>С 15 лет я начал писать код и создавать свои проекты. Сейчас мне 16, и за это время я успел разработать Telegram-ботов, сайты, симуляторы и приложения, которые помогают людям в обучении, поиске работы и самоорганизации.</p>
+                <p>Мой принцип — не просто писать код, а создавать полезные решения, которые меняют повседневность. Я люблю чистый, понятный код и дизайн, который не отвлекает, а помогает.</p>
+                <p>Когда не пишу код, я изучаю новые технологии, работаю над дисциплиной и развиваюсь каждый день. Моя цель — вырасти в сильного инженера и лидера цифрового мира.</p>
+            </div>
+            <div class="bio-image">
+                <img src="{% static 'vendor/img/dan_dasakami.png' %}" alt="Dan Dasakami" class="profile-image">
+            </div>
+        </div>
+        
+        <div class="bio-facts">
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-code"></i></div>
+                <h3 class="fact-title">Языки</h3>
+                <p>Python, JavaScript, Dart, SQL, HTML, CSS</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="fact-title">Фреймворки и инструменты</h3>
+                <p>Django, Flutter, Docker, GitHub, Firebase</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3 class="fact-title">Образование</h3>
+                <p>Самоучка. Каждый день — это школа.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 class="fact-title">Локация</h3>
+                <p>Кыргызстан/Бишкек</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 2. Timeline Section -->
+<section class="timeline-section">
+    <div class="container">
+        <h2 class="section-title centered">Мой путь</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">2025 — настоящее время</h3>
+                    <h4 class="timeline-subtitle">Создание проектов под брендом Dasakami</h4>
+                    <p>Запустил собственные проекты: образовательный сайт, симулятор дисциплины, боты, мессенджер, сайты на заказ и многое другое.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">2024</h3>
+                    <h4 class="timeline-subtitle">Начало программирования</h4>
+                    <p>Познакомился с Python, начал создавать первые боты и простые сайты. Вдохновился идеей цифровой пользы и дисциплины.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">2023</h3>
+                    <h4 class="timeline-subtitle">Интерес к IT и саморазвитию</h4>
+                    <p>Стал активно изучать технологии, дисциплину, книги, английский язык и поставил цель стать разработчиком.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Будущее</h3>
+                    <h4 class="timeline-subtitle">Продолжение пути</h4>
+                    <p>Хочу развивать проекты, выходить на международный уровень и стать примером для других подростков.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Секция Навыков -->
+<section class="skills-progress-section">
+    <div class="container">
+        <h2 class="section-title centered">Мои Навыки</h2>
+        <div class="skills-container">
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">Django</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">Flutter / Dart</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">SQL / NoSQL</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">HTML / CSS</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-progress">
+                <div class="skill-info">
+                    <span class="skill-name">UI/UX и работа с Figma</span>
+                    <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 4. Секция Целей -->
+<section class="goals-section">
+    <div class="container">
+        <h2 class="section-title centered">Мои Цели</h2>
+        <div class="goals-grid">
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-rocket"></i></div>
+                <h3 class="goal-title">Запустить IT-продукт</h3>
+                <p>Создать и запустить своё SaaS-приложение, которое поможет людям быть продуктивнее и дисциплинированнее (например, Dasakami Simulation).</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-book"></i></div>
+                <h3 class="goal-title">Создать Образовательную Платформу</h3>
+                <p>Развивать dasakami.edu.kg и сделать её главной точкой доступа к качественным знаниям на кыргызском и русском языках.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-users"></i></div>
+                <h3 class="goal-title">Помогать Новичкам</h3>
+                <p>Наставлять молодых разработчиков, делиться опытом и развивать комьюнити.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-globe"></i></div>
+                <h3 class="goal-title">Развивать Open Source</h3>
+                <p>Вносить вклад в открытые проекты и создавать свои, доступные для всего мира.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Секция Вдохновения -->
+<section class="inspiration-section">
+    <div class="container">
+        <h2 class="section-title centered">Что Меня Вдохновляет</h2>
+        <div class="inspiration-content">
+            <div class="inspiration-images">
+                <div class="inspiration-image">
+                    <img src="{% static 'vendor/img/stiv.jpg' %}" alt="Стив Джобс">
+                </div>
+                <div class="inspiration-image">
+                    <img src="{% static 'vendor/img/technology.jpg' %}" alt="Технологии будущего">
+                </div>
+                <div class="inspiration-image">
+                    <img src="{% static 'vendor/img/code.webp' %}" alt="Открытый исходный код">
+                </div>
+                <div class="inspiration-image">
+                    <img src="{% static 'vendor/img/minimalism.jpeg' %}" alt="Креативность и минимализм">
+                </div>
+            </div>
+            <div class="inspiration-quotes">
+                <blockquote class="inspiration-quote">
+                    <p>"Лучший способ предсказать будущее — создать его."</p>
+                    <cite>— Алан Кей</cite>
+                </blockquote>
+                <blockquote class="inspiration-quote">
+                    <p>"Простота — высшая форма изысканности."</p>
+                    <cite>— Леонардо да Винчи</cite>
+                </blockquote>
+                <blockquote class="inspiration-quote">
+                    <p>"Твоя дисциплина сегодня — твоя свобода завтра."</p>
+                    <cite>— Dan Dasakami</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title centered">Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3 class="faq-question">Сколько тебе лет и как давно ты программируешь?</h3>
+                <div class="faq-answer">
+                    <p>Мне 15 (скоро 16), я начал программировать в юном возрасте и уже успел сделать несколько серьезных проектов. Это стало частью моей жизни.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Какие проекты ты уже сделал?</h3>
+                <div class="faq-answer">
+                    <p>Я разработал <strong>dasakami.edu.kg</strong> (образовательный портал), Telegram-бот <strong>Dasakami Download</strong>, сайт для поиска работы <strong>Dasakami Vacancy</strong>, симулятор жизни <strong>Dasakami Simulation</strong> и другие проекты.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Какие технологии ты используешь?</h3>
+                <div class="faq-answer">
+                    <p>Python, Django, Flutter, SQL, NoSQL, HTML, CSS, Docker, GitHub, Dart и другие. Постоянно учусь и развиваюсь.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Какая у тебя цель?</h3>
+                <div class="faq-answer">
+                    <p>Развивать себя, создавать полезные digital-решения и вдохновлять других учиться и программировать. Я хочу сделать вклад в ИТ-экосистему Кыргызстана и мира.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.classList.toggle('open');
+        });
+    });
+</script>
+
+<style>
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .faq-answer.open {
+        max-height: 300px;
+        padding-top: 10px;
+    }
+
+    .faq-question {
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+
+    .faq-question::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: bold;
+    }
+
+    .faq-answer.open ~ .faq-question::after {
+        content: '-';
+    }
+</style>
+<!-- 7. Resume and Stats Section -->
+<section class="resume-stats-section">
+    <div class="container">
+        <div class="resume-stats-content">
+            <div class="resume-download">
+                <h2 class="section-title">Моё резюме</h2>
+                <p>Хочешь подробнее узнать о моём опыте и проектах? Скачай резюме, чтобы увидеть весь путь развития.</p>
+                <a href="/resume/dan-dasakami-resume.pdf" class="btn btn-primary" download>
+                    <i class="fas fa-download"></i> Скачать резюме
+                </a>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Года опыта</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Проектов</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Строк кода</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Клиентов и заказчиков</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

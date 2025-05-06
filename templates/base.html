@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dan Dasakami{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vendor/css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-text">Dan Dasakami</span>
+                </a>
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="/" class="nav-link {% if request.endpoint == 'main' %}active{% endif %}">Home</a></li>
+                        <li><a href="/about" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
+                        <li><a href="/projects" class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}">Projects</a></li>
+                        <li><a href="/articles" class="nav-link {% if request.endpoint == 'articles' %}active{% endif %}">Articles</a></li>
+                        <li><a href="/contacts" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">Dan Dasakami</h3>
+                    <p>Создаю полезные проекты, объединяя технологии, креатив и дисциплину.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Dasakami/" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/dandasakami" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/dskenglish.dsk/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Dan Dasakami. Все права защищены.</p>
+                <button id="back-to-top" class="btn-back-to-top" aria-label="Наверх">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

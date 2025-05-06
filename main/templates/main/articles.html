@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dan Dasakami - Articles{% endblock %}
+
+{% block content %}
+<!-- 1. Articles Header and Search -->
+<section class="articles-header">
+    <div class="container">
+        <h1 class="page-title">Мои статьи</h1>
+        <p class="page-subtitle">Мысли, уроки и идеи о развитии, дисциплине и технологиях.</p>
+        <div class="search-container">
+            <form action="{% url 'articles' %}" method="get" class="search-form">
+                <input type="text" name="q" id="search" placeholder="Найти статью..." value="{{ auery }}">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- 2. Articles Grid -->
+<section class="articles-grid-section">
+    <div class="container">
+        {% for article in articles %}
+        <div class="articles-grid">
+            <div class="article-card">
+                <div class="article-image">
+                    <img src="{{ article.cover.url }}" alt="{{ article.title }}">
+                    <span class="article-date">{{ article.created_at }}</span>
+                </div>
+                <div class="article-content">
+                    <h3 class="article-title">{{ article.title }}</h3>
+                    <p class="article-excerpt">{{ article.content|truncatechars:50|safe }}</p>
+                    <div class="article-meta">
+                        <span class="article-read-time"><i class="far fa-clock"></i> 3 минут</span>
+                        <a href="{% url 'article_detail' article.slug %}" class="btn-text">Поподробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if pagination.pages > 1 %}
+        <div class="pagination">
+            {% if pagination.has_prev %}
+            <a href="" class="pagination-item prev"><i class="fas fa-chevron-left"></i> Previous</a>
+            {% endif %}
+            
+                {% if page %}
+                    {% if page != pagination.page %}
+                    <a href="" class="pagination-item">{{ page }}</a>
+                    {% else %}
+                    <span class="pagination-item active">{{ page }}</span>
+                    {% endif %}
+                {% else %}
+                    <span class="pagination-item dots">…</span>
+                {% endif %}
+            
+            {% if pagination.has_next %}
+            <a href="" class="pagination-item next">Next <i class="fas fa-chevron-right"></i></a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- 3. Categories Filter -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">Browse by Topic</h2>
+        <div class="categories-grid">
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fab fa-python"></i></div>
+                <h3 class="category-title">Python</h3>
+                <span class="category-count">{{ category_counts.python }}</span>
+            </a>
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fab fa-js"></i></div>
+                <h3 class="category-title">JavaScript</h3>
+                <span class="category-count">{{ category_counts.javascript }}</span>
+            </a>
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3 class="category-title">Flutter</h3>
+                <span class="category-count">{{ category_counts.flutter }}</span>
+            </a>
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fas fa-code"></i></div>
+                <h3 class="category-title">Web Dev</h3>
+                <span class="category-count"></span>
+            </a>
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fas fa-tasks"></i></div>
+                <h3 class="category-title">Productivity</h3>
+                <span class="category-count">{{ category_counts.productivity }}</span>
+            </a>
+            <a href="" class="category-card ">
+                <div class="category-icon"><i class="fas fa-briefcase"></i></div>
+                <h3 class="category-title">Career</h3>
+                <span class="category-count">{{ category_counts.career }}</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Featured Articles -->
+<section class="featured-articles">
+    <div class="container">
+        <h2 class="section-title">Best of the Month</h2>
+        <div class="featured-articles-slider">
+            <div class="featured-article-card">
+                {% for article in featured %}
+                <div class="featured-article-image">
+                    {% if article.cover %}
+                    <img src="{{ article.cover.url }}" alt="{{ article.title }}">
+                    {% endif %}
+                </div>
+                <div class="featured-article-content">
+                    <div class="article-categories">
+                    </div>
+                    <h3 class="featured-article-title">{{ article.title }}</h3>
+                    <p class="featured-article-excerpt">{{ article.content|safe }}</p>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> {{ article.date }}</span>
+                        <span class="article-read-time"><i class="far fa-clock"></i> 3 min read</span>
+                    </div>
+                    <a href="{% url 'article_detail' article.slug %}" class="btn btn-outline">Read Article</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote-section">
+    <div class="container">
+        <div class="quote-content">
+            <div class="quote-book">
+                <div class="book-cover">
+                    <img src="{% static 'vendor/img/indistractable.jpg' %}" alt="Не отвлекайся">
+                </div>
+                <div class="book-info">
+                    <h3>Сейчас читаю</h3>
+                    <h4>«Не отвлекайся»</h4>
+                    <p>Нир Эяль</p>
+                </div>
+            </div>
+            <blockquote>
+                <p>«Тот, кто умеет управлять вниманием — управляет своей жизнью».</p>
+                <cite>— Нир Эяль, «Не отвлекайся»</cite>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Featured Articles Slider (simple implementation)
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.featured-article-card');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'flex' : 'none';
+            });
+        }
+        
+        // Initialize
+        if (slides.length > 0) {
+            showSlide(currentSlide);
+            
+            // Auto advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+    });
+</script>
+{% endblock %}

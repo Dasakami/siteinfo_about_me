@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ article.title }} {% endblock %}
+{% block content %}
+
+<section class="article-detail">
+    <div class="container">
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title">{{ article.title }}</h1>
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> {{ article.date }}</span>
+                    <span class="article-read-time"><i class="far fa-clock"></i> 3 min read</span>
+                    <span class="article-category">
+                        <i class="far fa-folder-open"></i> 
+                        <a href="" class="article-category-link">{{ category }}</a>
+                    </span>
+                </div>
+            </header>
+
+            {% if article.cover %}
+            <div class="article-image">
+                <img src="{{ article.cover.url }}" alt="{{ article.title }}">
+            </div>
+            {% endif %}
+
+            <div class="article-content">
+                {{ article.content|safe }}
+            </div>
+
+            <footer class="article-footer">
+                <a href="{% url 'articles' %}" class="btn btn-text">
+                    ← Back to Articles
+                </a>
+            </footer>
+        </article>
+    </div>
+</section>
+
+<style>
+    .article-detail {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-background);
+}
+
+.article-header {
+    margin-bottom: var(--space-md);
+}
+
+.article-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.article-meta i {
+    margin-right: 0.25rem;
+}
+
+.article-category-link {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.article-category-link:hover {
+    color: var(--color-accent-dark);
+}
+
+.article-image {
+    margin: var(--space-md) 0;
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-text);
+}
+
+.article-footer {
+    margin-top: var(--space-lg);
+}
+
+</style>
+{% endblock %}
