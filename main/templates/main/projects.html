@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static  %}
 {% block title %}Dan Dasakami - Projects{% endblock %}
+{% block seo %}
+<meta name="description" content="Портфолио Dan Dasakami. Проекты: Telegram-боты, сайты, симуляторы, платформы для образования и поиска работы.">
+<meta name="keywords" content="проекты, Dan Dasakami, Telegram-бот, сайт, симулятор, IT, образование, вакансии, портфолио">
+<meta property="og:title" content="Проекты — Dan Dasakami">
+<meta property="og:description" content="Посмотрите мои лучшие проекты: от образовательных платформ до ботов и коммерческих сайтов.">
+<meta property="og:image" content="{% static 'vendor/img/edu_project.jpg' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/projects">
+<meta name="robots" content="index, follow">
+{% endblock %}
 
 {% block content %}
 <!-- 1. Заголовок и фильтр проектов -->

@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Dan Dasakami - Home{% endblock %}
+{% block title %}Dan Dasakami - Официальный сайт {% endblock %}
+{% block seo %}
+<meta name="description" content="Официальный сайт Dan Dasakami — разработчика и создателя IT-проектов. Узнайте больше обо мне, моих проектах и статьях.">
+<meta name="keywords" content="Dan Dasakami, разработчик, проекты, статьи, программирование, дисциплина, IT, Кыргызстан">
+<meta property="og:title" content="Dan Dasakami — IT-проекты, статьи и развитие">
+<meta property="og:description" content="Привет! Я Dan Dasakami. Разработчик, который создаёт полезные цифровые решения. Смотрите мои проекты и статьи.">
+<meta property="og:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/">
+<meta name="robots" content="index, follow">
+{% endblock %}
 
 {% block content %}
 <!-- 1. Hero Section -->

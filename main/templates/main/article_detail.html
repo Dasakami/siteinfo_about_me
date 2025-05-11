@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} {{ article.title }} {% endblock %}
+{% block seo %}
+<meta name="description" content="{{ article.title }} — статья от Dan Dasakami. {{ article.content|striptags|truncatechars:150 }}">
+<meta name="keywords" content="Dan Dasakami, статья, {{ article.title }}, блог, мысли, IT, дисциплина">
+<meta property="og:title" content="{{ article.title }} — Dan Dasakami">
+<meta property="og:description" content="{{ article.content|striptags|truncatechars:120 }}">
+<meta property="og:image" content="{{ article.cover.url }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index, follow">
+{% endblock %}
+
 {% block content %}
 
 <section class="article-detail">

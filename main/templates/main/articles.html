@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Dan Dasakami - Articles{% endblock %}
+{% block seo %}
+<meta name="description" content="Читайте статьи Dan Dasakami о разработке, дисциплине, саморазвитии и цифровых технологиях. Только ценный и практичный контент.">
+<meta name="keywords" content="статьи, блог, Dan Dasakami, дисциплина, разработка, программирование, технологии, мышление">
+<meta property="og:title" content="Статьи — Dan Dasakami">
+<meta property="og:description" content="Авторские статьи о разработке, мышлении и дисциплине. Углублённый взгляд на цифровую культуру.">
+<meta property="og:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/articles">
+<meta name="robots" content="index, follow">
+{% endblock %}
 
 {% block content %}
 <!-- 1. Articles Header and Search -->

@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}About Dan Dasakami{% endblock %}
+{% block title %} Информация о Dan Dasakami{% endblock %}
+{% block seo %}
+<meta name="description" content="Я — Dan Dasakami, разработчик из Кыргызстана. Создаю сайты, приложения и боты с фокусом на дисциплину и ценность.">
+<meta name="keywords" content="Dan Dasakami, обо мне, разработчик, биография, путь, IT, Кыргызстан, дисциплина">
+<meta property="og:title" content="Обо мне — Dan Dasakami">
+<meta property="og:description" content="Познакомьтесь со мной поближе — кто я, чему учусь и какие цели ставлю в жизни и разработке.">
+<meta property="og:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/about">
+<meta name="robots" content="index, follow">
+{% endblock %}
 
 {% block content %}
 <!-- 1. Biography Section -->

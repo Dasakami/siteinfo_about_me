@@ -1,13 +1,32 @@
+  {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Dan Dasakami{% endblock %}</title>
-    {% load static %}
+    {% block seo %}
+<meta name="description" content="Официальный сайт Dan Dasakami — разработчика, создателя цифровых решений и мыслителя. Здесь вы найдёте информацию обо мне, мои проекты и статьи.">
+<meta name="keywords" content="Dan Dasakami, разработчик, проекты, сайты, Flutter, Django, Telegram-боты, программирование, Кыргызстан, цифровые решения, дисциплина, IT">
+<meta name="author" content="Dan Dasakami">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dan Dasakami — Разработчик и создатель цифровых решений">
+<meta property="og:description" content="Официальный сайт Dan Dasakami. Мои проекты, статьи и контактная информация.">
+<meta property="og:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dan Dasakami — Разработчик и мыслитель">
+<meta name="twitter:description" content="Мои лучшие IT-проекты, статьи и путь развития с 15 лет.">
+<meta name="twitter:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+{% endblock %}
+
     <link rel="stylesheet" href="{% static 'vendor/css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    {% block extra_css %}{% endblock %}
 </head>
 <body>
     <header class="site-header">

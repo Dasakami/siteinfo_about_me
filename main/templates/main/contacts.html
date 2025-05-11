@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Contact Dan Dasakami{% endblock %}
+{% block seo %}
+<meta name="description" content="Свяжитесь с Dan Dasakami — разработчиком IT-решений. По вопросам сотрудничества, проектов или просто чтобы сказать привет.">
+<meta name="keywords" content="контакты, Dan Dasakami, связаться, сотрудничество, разработчик, Telegram, GitHub">
+<meta property="og:title" content="Контакты — Dan Dasakami">
+<meta property="og:description" content="Ищете способ связаться со мной? Здесь вы найдёте все мои соцсети и формы для связи.">
+<meta property="og:image" content="{% static 'vendor/img/dan_dasakami.png' %}">
+<meta property="og:url" content="https://dan-dasakami.onrender.com/contacts">
+<meta name="robots" content="index, follow">
+{% endblock %}
 
 {% block content %}
 <!-- 1. Contact Form Section -->
