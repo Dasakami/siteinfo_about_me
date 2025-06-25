@@ -91,10 +91,10 @@ CLOUDINARY_STORAGE = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dandasakami',  # Имя базы данных (Render)
-        'USER': 'dasakami',  # Имя пользователя (Render)
-        'PASSWORD': '5DPGL3hw6BgENh9LgTul6omf8ud3t34x',  # Пароль (Render)
-        'HOST': 'dpg-d0d09s1r0fns73cbf79g-a',  # Хост (Render)
+        'NAME': 'dan2',  # Имя базы данных (Render)
+        'USER': 'danchikk',  # Имя пользователя (Render)
+        'PASSWORD': 'QaJekMFwkiWWMijbgysqkP1BgASsp0p1',  # Пароль (Render)
+        'HOST': 'dpg-d1e1langi27c73c4cklg-a',  # Хост (Render)
         'PORT': '5432',  # Порт (Render)
     }
 }
