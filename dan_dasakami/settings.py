@@ -87,7 +87,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
         'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
         'HOST': 'db',  # Хост (Render)
-        'PORT': '5432',  # Порт (Render)
+        'PORT': '5433',  # Порт (Render)
     }
 }
 
