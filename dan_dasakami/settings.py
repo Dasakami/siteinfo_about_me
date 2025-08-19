@@ -12,21 +12,21 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9ylhhlt8rd_r!n4i@42h%_v0_upbqkw0f#=h%_w^27cbbq^ng!'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -74,15 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dan_dasakami.wsgi.application'
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dmo1w8jv3',
-    'API_KEY': '389289238549655',
-    'API_SECRET': 'o9x3aYhIU-5KscBekBHHeo-m28E',
-}
 
 
 # Database
@@ -91,10 +83,10 @@ CLOUDINARY_STORAGE = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'meinfo',  # Имя базы данных (Render)
-        'USER': 'meshka',  # Имя пользователя (Render)
-        'PASSWORD': '3FjHinHroOuZMEP0xJA2db81WGj9MoBZ',  # Пароль (Render)
-        'HOST': 'dpg-d2dm1ter433s73esd6e0-a',  # Хост (Render)
+        'NAME': os.getenv('DB_NAME'),  # Имя базы данных (Render)
+        'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
+        'HOST': 'db',  # Хост (Render)
         'PORT': '5432',  # Порт (Render)
     }
 }
@@ -134,16 +126,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
- # это куда Django будет копировать статику
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+MEDIA_URL = '/media/'
 if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dmo1w8jv3',
+    'API_KEY': '389289238549655',
+    'API_SECRET': 'o9x3aYhIU-5KscBekBHHeo-m28E',
+}
 
 PORT = os.environ.get('PORT', 10000)
 
