@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))
@@ -80,14 +82,21 @@ WSGI_APPLICATION = 'dan_dasakami.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME'),  # Имя базы данных (Render)
+#         'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
+#         'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
+#         'HOST': os.getenv('DB_HOST'),  # Хост (Render)
+#         'PORT': '5432',  # Порт (Render)
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),  # Имя базы данных (Render)
-        'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
-        'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
-        'HOST': 'db',  # Хост (Render)
-        'PORT': '5432',  # Порт (Render)
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -113,9 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
@@ -125,15 +134,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# для статических файлов
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+
+# убираем STATICFILES_DIRS при использовании Cloudinary в продакшене
 if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATICFILES_DIRS = []  # не нужно для продакшена
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # можно оставить, но collectstatic будет в Cloudinary
 
-
+# Cloudinary
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+
+MEDIA_URL = '/media/'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dmo1w8jv3',
