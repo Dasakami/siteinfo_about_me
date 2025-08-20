@@ -160,11 +160,14 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'o9x3aYhIU-5KscBekBHHeo-m28E',
 
     # Опции для collectstatic
-    'STATICFILES': {
-        'resource_type': 'auto',    # auto/raw позволит загрузить CSS, JS и шрифты
-        'use_root_path': True,      # сохраняет структуру папок без префикса приложения
-        'folder': 'static',         # (опционально) общий корень для статических файлов
-    }
+    # 'STATICFILES': {
+    #     'resource_type': 'auto',    # auto/raw позволит загрузить CSS, JS и шрифты
+    #     'use_root_path': True,      # сохраняет структуру папок без префикса приложения
+    #     'folder': 'static',         # (опционально) общий корень для статических файлов
+    # }
+
+    'DEFAULT_RESOURCE_TYPE': 'auto',  # применится ко всем загрузкам, включая статические
+    'FOLDER': 'static'  
 }
 
 PORT = os.environ.get('PORT', 10000)
