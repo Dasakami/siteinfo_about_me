@@ -136,13 +136,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # для статических файлов
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / '/static/']
 
-# Cloudinary
+# Папка с вашими локальными static/ (для DEBUG)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+# Папка для collectstatic (всё будет туда складываться, даже если дальше в Cloudinary)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Хранилища
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE   = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 MEDIA_URL = '/media/'
