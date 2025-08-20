@@ -83,23 +83,23 @@ WSGI_APPLICATION = 'dan_dasakami.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME'),  # Имя базы данных (Render)
-#         'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
-#         'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
-#         'HOST': os.getenv('DB_HOST'),  # Хост (Render)
-#         'PORT': '5432',  # Порт (Render)
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),  # Имя базы данных (Render)
+        'USER': os.getenv('DB_USER'),  # Имя пользователя (Render)
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль (Render)
+        'HOST': os.getenv('DB_HOST'),  # Хост (Render)
+        'PORT': '5432',  # Порт (Render)
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
