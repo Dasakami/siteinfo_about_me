@@ -137,17 +137,10 @@ USE_TZ = True
 
 # для статических файлов
 STATIC_URL = '/static/'
-
-# убираем STATICFILES_DIRS при использовании Cloudinary в продакшене
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-else:
-    STATICFILES_DIRS = []  # не нужно для продакшена
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # можно оставить, но collectstatic будет в Cloudinary
+STATICFILES_DIRS = [BASE_DIR / '/static/']
 
 # Cloudinary
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATIC_URL = 'https://res.cloudinary.com/dmo1w8jv3/static/'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -166,8 +159,8 @@ CLOUDINARY_STORAGE = {
     #     'folder': 'static',         # (опционально) общий корень для статических файлов
     # }
 
-    'DEFAULT_RESOURCE_TYPE': 'auto',  # применится ко всем загрузкам, включая статические
-    'FOLDER': 'static'  
+    # 'DEFAULT_RESOURCE_TYPE': 'auto',  # применится ко всем загрузкам, включая статические
+    # 'FOLDER': 'static'  
 }
 
 PORT = os.environ.get('PORT', 10000)
