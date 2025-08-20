@@ -35,6 +35,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = [
     'main',
+    'cloudinary',
     'django_ckeditor_5',
     'django.contrib.sitemaps',
     'cloudinary_storage',
@@ -145,7 +146,9 @@ else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # можно оставить, но collectstatic будет в Cloudinary
 
 # Cloudinary
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATIC_URL = 'https://res.cloudinary.com/dmo1w8jv3/static/'
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
