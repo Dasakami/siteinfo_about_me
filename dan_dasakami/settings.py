@@ -158,6 +158,13 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dmo1w8jv3',
     'API_KEY': '389289238549655',
     'API_SECRET': 'o9x3aYhIU-5KscBekBHHeo-m28E',
+
+    # Опции для collectstatic
+    'STATICFILES': {
+        'resource_type': 'auto',    # auto/raw позволит загрузить CSS, JS и шрифты
+        'use_root_path': True,      # сохраняет структуру папок без префикса приложения
+        'folder': 'static',         # (опционально) общий корень для статических файлов
+    }
 }
 
 PORT = os.environ.get('PORT', 10000)
